@@ -22,9 +22,9 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 
-import doberman from 'D:/Cesar/Desktop/landing-Page/landingPage/src/assets/img/doberman.png';
-import golden from 'D:/Cesar/Desktop/landing-Page/landingPage/src/assets/img/golden.png';
-import pastorAleman from 'D:/Cesar/Desktop/landing-Page/landingPage/src/assets/img/pastorAleman.png';
+import doberman from '../assets/img/doberman.png';
+import golden from '../assets/img/golden.png';
+import pastorAleman from '../assets/img/pastorAleman.png';
 
 const drawerWidth = 240;
 const navItems = ['About', 'Contact', 'Login'];
