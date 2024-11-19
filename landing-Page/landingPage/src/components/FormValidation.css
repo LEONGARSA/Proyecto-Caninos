@@ -1,79 +1,82 @@
 
+/* Estilos para el contenedor principal del formulario */
 .wrapper {
-  width: 420px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, .2);
-  backdrop-filter: blur(30px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-  color: aliceblue;
-  border-radius: 30px;
-  padding: 30px 40px;
+  width: 420px; /* Ancho del formulario */
+  background: transparent; /* Fondo transparente */
+  border: 2px solid rgba(255, 255, 255, .2); /* Borde semitransparente */
+  backdrop-filter: blur(30px); /* Efecto de desenfoque en el fondo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2); /* Sombra alrededor del formulario */
+  color: aliceblue; /* Color del texto principal */
+  border-radius: 30px; /* Bordes redondeados */
+  padding: 30px 40px; /* Espaciado interno del formulario */
 }
 
-.wrapper h1{
-  
-  font-size: 36px;
-  text-align: center;
-
+/* Estilo para el título del formulario */
+.wrapper h1 {
+  font-size: 36px; /* Tamaño de fuente del título */
+  text-align: center; /* Alineación centrada del texto */
 }
 
-.wrapper .inputbox{
-  position: relative;
-  width: 100%;
-  height: 50px;
-  margin: 30px 0;
+/* Contenedor de cada campo del formulario */
+.wrapper .inputbox {
+  position: relative; /* Posicionamiento relativo para alinear íconos */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: 50px; /* Altura de cada campo */
+  margin: 30px 0; /* Espaciado superior e inferior entre campos */
 }
 
-.inputbox input{
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  border: 2px solid rgba(255, 255, 255, .2);
-  border-radius: 40px;
-  font-size: 16px;
-  color: white;
-  padding: 10px 20px;
+/* Estilo para los campos de entrada */
+.inputbox input {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: 100%; /* Altura del campo igual al contenedor */
+  background: transparent; /* Fondo transparente */
+  border: none; /* Sin borde por defecto */
+  outline: none; /* Sin borde al hacer clic */
+  border: 2px solid rgba(255, 255, 255, .2); /* Borde semitransparente */
+  border-radius: 40px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de la fuente */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno del texto */
 }
 
-.inputbox input::placeholder{
-  color: white;
-  font-size: 16px;
+/* Estilo para el texto de marcador de posición (placeholder) */
+.inputbox input::placeholder {
+  color: white; /* Color del texto del marcador de posición */
+  font-size: 16px; /* Tamaño de la fuente */
 }
 
-.inputbox .icon{
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 16px;
+/* Estilo para el ícono dentro de los campos de entrada */
+.inputbox .icon {
+  position: absolute; /* Posición absoluta dentro del contenedor */
+  right: 20px; /* Separación a la derecha */
+  top: 50%; /* Alineación vertical al centro */
+  transform: translateY(-50%); /* Corrección de alineación vertical */
+  font-size: 16px; /* Tamaño del ícono */
 }
 
-
-.wrapper button{
-  width: 100%;
-  height: 45px;
-  background: white;
-  border: none;
-  outline: none;
-  border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .1);   
-  cursor: pointer;
-  font-size: 16px;
-  color: #333;
-  font-weight: 700; 
+/* Estilo para el botón de envío */
+.wrapper button {
+  width: 100%; /* Ancho completo */
+  height: 45px; /* Altura del botón */
+  background: white; /* Fondo blanco */
+  border: none; /* Sin borde */
+  outline: none; /* Sin borde al hacer clic */
+  border-radius: 40px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1); /* Sombra ligera */
+  cursor: pointer; /* Cambia el cursor a un puntero al pasar sobre el botón */
+  font-size: 16px; /* Tamaño del texto */
+  color: #333; /* Color del texto */
+  font-weight: 700; /* Peso del texto en negrita */
 }
 
-
+/* Estilo para los mensajes de error */
 .error {
-  color: red;
-  font-size: 0.9em;
-  margin: 0 0;
-
+  color: red; /* Color rojo para los errores */
+  font-size: 0.9em; /* Tamaño de fuente más pequeño */
+  margin: 0 0; /* Sin margen adicional */
 }
 
-
+/* Efecto hover para el botón de envío */
 button:hover {
-  background-color:white;
+  background-color: white; /* Fondo blanco persistente */
 }
