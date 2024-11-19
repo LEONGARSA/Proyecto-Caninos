@@ -7,7 +7,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 
-import { registerUser } from './api/userApi';
+import { registerUser } from '../api/UserApi.jsx';
 
 //import {TextField} from '@mui/material';
 
