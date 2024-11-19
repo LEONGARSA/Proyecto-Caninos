@@ -1,116 +1,118 @@
-import * as React from 'react'; // Importación de React
-import PropTypes from 'prop-types'; // Validación de tipos de propiedades
+import * as React from 'react';
+import PropTypes from 'prop-types';
 import {
-  AppBar, // Barra de navegación superior
-  Box, // Contenedor flexible
-  Card, // Tarjeta para mostrar contenido
-  CardContent, // Contenido de la tarjeta
-  CardMedia, // Imagen dentro de la tarjeta
-  CssBaseline, // Reinicio de estilos base
-  Divider, // Separador visual
-  Drawer, // Menú lateral
-  IconButton, // Botón con ícono
-  List, // Lista de elementos
-  ListItem, // Elemento de la lista
-  ListItemButton, // Botón dentro del elemento de la lista
-  ListItemText, // Texto del elemento de la lista
-  Toolbar, // Contenedor para los elementos de la barra de navegación
-  Typography, // Componente para texto
-  Button, // Botón estilizado
-} from '@mui/material'; // Componentes de Material UI
-import MenuIcon from '@mui/icons-material/Menu'; // Ícono del menú
-import { Link } from 'react-router-dom'; // Navegación entre páginas
+  AppBar,
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  CssBaseline,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Toolbar,
+  Typography,
+  Button,
 
-import doberman from '../assets/img/doberman.png'; // Imagen de un Doberman
-import golden from '../assets/img/golden.png'; // Imagen de un Golden Retriever
-import pastorAleman from '../assets/img/pastorAleman.png'; // Imagen de un Pastor Alemán
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
 
-const drawerWidth = 240; // Ancho del menú lateral
-const navItems = ['About', 'Contact', 'Login']; // Elementos de navegación
+import doberman from '../assets/img/doberman.png';
+import golden from '../assets/img/golden.png';
+import pastorAleman from '../assets/img/pastorAleman.png';
+
+const drawerWidth = 240;
+const navItems = ['About', 'Contact', 'Login'];
 
 // Componente para las tarjetas de perros
 function DogCard({ name, description, image, alt }) {
   return (
-    <Box sx={{ margin: 2 }}> {/* Margen alrededor de cada tarjeta */}
+    <Box sx={{ margin: 2 }}>
       <Card
         sx={{
-          width: 420, // Ancho de la tarjeta
-          background: 'transparent', // Fondo transparente
-          border: '2px solid rgba(255, 255, 255, 0.2)', // Borde semitransparente
-          backdropFilter: 'blur(40px)', // Desenfoque de fondo
-          boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', // Sombra ligera
-          borderRadius: '30px', // Bordes redondeados
-          transition: 'transform 0.3s, box-shadow 0.3s', // Animación en hover
-          '&:hover': { // Estilo al pasar el mouse
-            transform: 'scale(1.05)', // Escala la tarjeta
-            boxShadow: 'none', // Sin sombra al hacer hover
-            filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.5))', // Sombra alternativa
-          },
+          width: 420,
+          background: 'transparent',
+          border: '2px solid rgba(255, 255, 255, 0.2)',
+          backdropFilter: 'blur(40px)',
+          boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+          color: 'white',
+          borderRadius: '30px',
+          padding: '30px 40px',
+          transition: 'transform 0.3s, box-shadow 0.3s',
+          willChange: 'boxShadow, transform',
+                      '&:hover': {
+          transform: 'scale(1.05)',
+          boxShadow: "none", // Desactiva box-shadow si afecta el texto
+          filter: "drop-shadow(0 0 20px rgba(255, 255, 255, 0.5))", // Usa una alternativa con filter
+          backfaceVisibility: "visible", // Asegura claridad del texto
+                      },
         }}
-      >
-        <CardMedia component="img" height="240" image={image} alt={alt} /> {/* Imagen del perro */}
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div" sx={{ color: 'inherit' }}>
-            {name} {/* Nombre del perro */}
-          </Typography>
-          <Typography variant="body2" sx={{ color: 'inherit' }}>
-            {description} {/* Descripción del perro */}
-          </Typography>
-        </CardContent>
+      >       
+
+          <CardMedia component="img" height="240" image={image} alt={alt} />
+        
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div" sx={{ color: 'inherit' }}>
+              {name}
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'inherit' }}>
+              {description}
+            </Typography>
+          </CardContent>
+
       </Card>
     </Box>
   );
 }
 
-// Página principal
 function LandingPage(props) {
-  const { window } = props; // Propiedad de ventana para el contenedor del menú
-  const [mobileOpen, setMobileOpen] = React.useState(false); // Estado del menú móvil
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState); // Alterna el estado del menú móvil
+    setMobileOpen((prevState) => !prevState);
   };
 
-  // Información de los perros
   const dogs = [
     {
       name: 'Doberman',
-      description: 'Es un perro dócil, cariñoso y muy apegado a su familia, pero a la vez valiente y seguro de sí mismo.',
+      description:
+        'Es un perro dócil, cariñoso y muy apegado a su familia, pero a la vez valiente y seguro de sí mismo.',
       image: doberman,
-      alt: 'doberman',
+      alt: 'doberman'
     },
     {
       name: 'Golden Retriever',
-      description: 'Es un perro dócil, cariñoso y muy apegado a su familia, ideal para hogares con niños.',
+      description:
+        'Es un perro dócil, cariñoso y muy apegado a su familia, ideal para hogares con niños. Requiere ejercicio regular y entrenamiento básico.',
       image: golden,
-      alt: 'golden',
+      alt: 'golden'
     },
     {
       name: 'Pastor Alemán',
-      description: 'Es un perro leal, valiente y versátil, ampliamente utilizado en trabajos policiales y de rescate.',
+      description:
+        'Es un perro leal, valiente y versátil, ampliamente utilizado en trabajos policiales y de rescate. Ideal para dueños activos.',
       image: pastorAleman,
-      alt: 'pastorAleman',
+      alt: 'pastorAleman'
     },
   ];
 
-  // Menú lateral
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Tu Mejor Amigo {/* Título del menú */}
+        Tu Mejor Amigo
       </Typography>
-      <Divider /> {/* Línea divisoria */}
+      <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText
-                primary={
-                  <Link to={`/${item.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                    {item} {/* Elemento de navegación */}
-                  </Link>
-                }
-              />
+              <ListItemText primary={<Link to={`/${item.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>{item}</Link>} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -118,68 +120,62 @@ function LandingPage(props) {
     </Box>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined; // Contenedor del menú
+  const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column', // Diseño en columna
-        minHeight: '100vh', // Altura mínima
-        background: 'transparent', // Fondo transparente
-        color: 'aliceblue', // Color del texto
-        padding: '30px 40px', // Espaciado interno
+    <Box 
+      sx={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        minHeight: '100vh', 
+        background: 'transparent', 
+        color: 'aliceblue', 
+        padding: '30px 40px' 
       }}
     >
-      <CssBaseline /> {/* Reinicio de estilos base */}
-      <AppBar
-        component="nav"
-        sx={{
-          height: '80px', // Altura de la barra
-          background: 'transparent', // Fondo transparente
-          boxShadow: 'none', // Sin sombra
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }} // Solo en pantallas pequeñas
-          >
-            <MenuIcon /> {/* Ícono del menú */}
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, fontWeight: 'bold', fontSize: '2rem' }}
-          >
-            Tu Mejor Amigo {/* Título */}
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'flex', gap: '8px' } }}>
-            {navItems.map((item) => (
-              <Button
-                key={item}
-                sx={{
-                  color: '#fff',
-                  transition: 'transform 0.3s, box-shadow 0.3s',
-                  '&:hover': {
-                    boxShadow: '0 0 20px rgba(255, 255, 255, 0.5)',
-                    background: 'transparent',
-                    transform: 'scale(1.05)',
-                  },
-                  border: '0.5px solid white',
-                }}
-              >
-                <Link to={`/${item.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  {item} {/* Enlace de navegación */}
-                </Link>
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
+    <CssBaseline />
+    <AppBar 
+      component="nav" 
+      sx={{ 
+        height: '80px', 
+        background: 'transparent',  // Fondo transparente
+        boxShadow: 'none'  // Eliminar sombra (si prefieres que no haya sombra)
+      }}
+    >
+      <Toolbar>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          edge="start"
+          onClick={handleDrawerToggle}
+          sx={{ mr: 2, display: { sm: 'none' }}}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' },fontWeight: 'bold', fontSize:'2rem' }}>
+          Tu Mejor Amigo
+        </Typography>
+        <Box sx={{ display: { xs: 'none', sm: 'flex', gap:'8px' }}}>
+          {navItems.map((item) => (
+            <Button key={item} sx={{ color: '#fff', transition: 'transform 0.3s, box-shadow 0.3s',
+              '&:hover': {
+              boxShadow: '0 0 20px rgba(255, 255, 255, 0.5)',
+              backfaceVisibility: "visible", // Asegura claridad del texto
+              background:'transparent',
+              transform: 'scale(1.05)'
+              },
+              border:'0.5px solid white',
+            
+              }}>
+              <Link to={`/${item.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                {item}
+              </Link>
+            </Button>
+          ))}
+        </Box>
+      </Toolbar>
+    </AppBar>
+
       <nav>
         <Drawer
           container={container}
@@ -187,7 +183,7 @@ function LandingPage(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Mejora el rendimiento en pantallas móviles
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
@@ -215,7 +211,7 @@ function LandingPage(props) {
 }
 
 LandingPage.propTypes = {
-  window: PropTypes.func, // Propiedad opcional para el contenedor
+  window: PropTypes.func,
 };
 
 export default LandingPage;
