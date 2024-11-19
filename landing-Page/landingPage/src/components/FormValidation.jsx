@@ -7,6 +7,8 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 
+import { registerUser } from './api/userApi';
+
 //import {TextField} from '@mui/material';
 
 const FormValidation = () => {
@@ -43,14 +45,26 @@ const FormValidation = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      // Acción después de la validación (simulación de registro exitoso)
-      console.log('Formulario enviado');
-
-      // Redirigir al login
-      navigate('/login'); // Redirige a la página de login
+      try {
+        // Llama a la función registerUser con los datos del formulario
+        const response = await registerUser(formData);
+  
+        if (response) {
+          console.log('Usuario creado exitosamente:', response);
+  
+          // Redirigir al login
+          navigate('/login');
+        } else {
+          console.error('Error al crear el usuario.');
+          alert('No se pudo registrar el usuario. Intente nuevamente.');
+        }
+      } catch (error) {
+        console.error('Error en la solicitud:', error);
+        alert('Ocurrió un error al procesar la solicitud.');
+      }
     }
   };
 
