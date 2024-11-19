@@ -1,38 +1,43 @@
-import React from 'react';
-import "./Login.css";
-import { Link } from 'react-router-dom';
-import Button from '@mui/material/Button';
-import HttpsOutlinedIcon from '@mui/icons-material/HttpsOutlined';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import PetsOutlinedIcon from '@mui/icons-material/PetsOutlined';
+import React from 'react'; // Importación de React
+import "./Login.css"; // Estilo específico para el componente Login
+import { Link } from 'react-router-dom'; // Navegación entre páginas
+import Button from '@mui/material/Button'; // Botón estilizado de Material UI
+import HttpsOutlinedIcon from '@mui/icons-material/HttpsOutlined'; // Ícono de contraseña
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined'; // Ícono de usuario
+import PetsOutlinedIcon from '@mui/icons-material/PetsOutlined'; // Ícono de mascota
 
 function Login() {
   return (
-    <div className="wrapper">
-      <form action="">
-        <center><PetsOutlinedIcon className='icon' /></center>
-        <h1>Login</h1>
-        <div className="inputbox">
-          <input type="text" placeholder='Username' required />
-          <AccountCircleOutlinedIcon className='icon' />
+    <div className="wrapper"> {/* Contenedor principal estilizado */}
+      <form action=""> {/* Formulario para login */}
+        <center><PetsOutlinedIcon className='icon' /></center> {/* Ícono de mascota centrado */}
+        <h1>Login</h1> {/* Título del formulario */}
+        <div className="inputbox"> {/* Contenedor para el campo de entrada */}
+          <input type="text" placeholder='Username' required /> {/* Campo para el nombre de usuario */}
+          <AccountCircleOutlinedIcon className='icon' /> {/* Ícono del usuario */}
         </div>
-        <div className="inputbox">
-          <input type="Password" placeholder='Password' required />
-          <HttpsOutlinedIcon className='icon' />
-        </div>
-
-        <div className="rememberforgot">
-          <label><input type="checkbox" />Remember me</label>
-          <a href="#">Forgot Password?</a>
+        <div className="inputbox"> {/* Contenedor para el campo de entrada */}
+          <input type="Password" placeholder='Password' required /> {/* Campo para la contraseña */}
+          <HttpsOutlinedIcon className='icon' /> {/* Ícono de la contraseña */}
         </div>
 
-        <Button variant="contained" sx={{ width: '100%' }}>Login</Button>
-        <div className="register-link">
-          <p>Don't have an account? <Link to="/register">Register</Link></p>
+        <div className="rememberforgot"> {/* Sección para recordar contraseña y link de olvido */}
+          <label>
+            <input type="checkbox" /> {/* Checkbox para recordar credenciales */}
+            Remember me
+          </label>
+          <a href="#">Forgot Password?</a> {/* Enlace para recuperación de contraseña */}
+        </div>
+
+        <Button variant="contained" sx={{ width: '100%' }}>Login</Button> {/* Botón de inicio de sesión */}
+        <div className="register-link"> {/* Sección de registro */}
+          <p>
+            Don't have an account? <Link to="/register">Register</Link> {/* Enlace al registro */}
+          </p>
         </div>
       </form>
     </div>
   );
 }
 
-export default Login;
+export default Login; // Exportación del componente para ser utilizado en otros archivos

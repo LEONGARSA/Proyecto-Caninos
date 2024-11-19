@@ -1,99 +1,97 @@
 .wrapper {
-    width: 420px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(30px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    color: aliceblue;
-    border-radius: 30px;
-    padding: 30px 40px;
+    width: 420px; /* Ancho del contenedor principal */
+    background: transparent; /* Fondo transparente */
+    border: 2px solid rgba(255, 255, 255, .2); /* Borde sutil blanco */
+    backdrop-filter: blur(30px); /* Desenfoque de fondo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2); /* Sombra alrededor */
+    color: aliceblue; /* Color de texto */
+    border-radius: 30px; /* Bordes redondeados */
+    padding: 30px 40px; /* Espaciado interno */
 }
 
-.wrapper h1{
-    
-    font-size: 36px;
-    text-align: center;
-
+.wrapper h1 {
+    font-size: 36px; /* Tamaño de fuente para el título */
+    text-align: center; /* Centra el título */
 }
 
-.wrapper .inputbox{
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
+.wrapper .inputbox {
+    position: relative; /* Posicionamiento relativo para el ícono */
+    width: 100%; /* Ancho completo */
+    height: 50px; /* Alto del campo de entrada */
+    margin: 30px 0; /* Espaciado superior e inferior */
 }
 
-.inputbox input{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    /*border: none;*/
-    outline: none;
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 40px;
-    font-size: 16px;
-    color: white;
+.inputbox input {
+    width: 100%; /* Ancho completo del campo de entrada */
+    height: 100%; /* Alto completo del campo de entrada */
+    background: transparent; /* Fondo transparente */
+    /* border: none; Eliminado para mantener el borde */
+    outline: none; /* Elimina el contorno del campo al hacer clic */
+    border: 2px solid rgba(255, 255, 255, .2); /* Borde sutil blanco */
+    border-radius: 40px; /* Bordes redondeados del campo de entrada */
+    font-size: 16px; /* Tamaño de fuente */
+    color: white; /* Color del texto */
 }
 
-.inputbox input::placeholder{
-    color: white;
+.inputbox input::placeholder {
+    color: white; /* Color del texto del placeholder */
 }
 
 .inputbox .icon {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-10%);
-    font-size: 16px;
+    position: absolute; /* Posiciona el ícono de manera absoluta dentro del campo */
+    right: 20px; /* Alinea el ícono a la derecha */
+    top: 50%; /* Centra verticalmente el ícono */
+    transform: translateY(-10%); /* Ajuste fino para centrar el ícono */
+    font-size: 16px; /* Tamaño de fuente del ícono */
 }
 
 .wrapper .rememberforgot {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14.5px;
-    margin: -15px 0 15px;
+    display: flex; /* Usando flexbox para alinear los elementos horizontalmente */
+    justify-content: space-between; /* Espacio entre los elementos (checkbox y enlace) */
+    font-size: 14.5px; /* Tamaño de fuente */
+    margin: -15px 0 15px; /* Margen superior negativo para ajustar la alineación */
 }
 
-.rememberforgot label input{
-    accent-color:white;
-    margin-right: 4px;
+.rememberforgot label input {
+    accent-color: white; /* Color del checkbox */
+    margin-right: 4px; /* Espacio entre el checkbox y el texto */
 }
 
-.rememberforgot a{
-    color: white;
-    text-decoration: none;
+.rememberforgot a {
+    color: white; /* Color blanco para el enlace */
+    text-decoration: none; /* Elimina la subrayado del enlace */
 }
 
-.rememberforgot a:hover{
-    text-decoration: underline;
+.rememberforgot a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el cursor */
 }
 
-.wrapper button{
-    width: 100%;
-    height: 45px;
-    background: white;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);   
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 700; 
+.wrapper button {
+    width: 100%; /* Ancho completo del botón */
+    height: 45px; /* Alto del botón */
+    background: white; /* Fondo blanco para el botón */
+    border: none; /* Elimina el borde */
+    outline: none; /* Elimina el contorno al hacer clic */
+    border-radius: 40px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1); /* Sombra sutil */
+    cursor: pointer; /* Cursor de mano al pasar por encima */
+    font-size: 16px; /* Tamaño de fuente del botón */
+    color: #333; /* Color del texto */
+    font-weight: 700; /* Peso de la fuente (negrita) */
 }
 
-.wrapper .register-link{
-    font-size: 14.5px;
-    text-align: center;
-    margin-top: 20px;
+.wrapper .register-link {
+    font-size: 14.5px; /* Tamaño de fuente */
+    text-align: center; /* Centra el texto */
+    margin-top: 20px; /* Espacio superior */
 }
 
 .register-link p a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
+    color: white; /* Color blanco para el enlace */
+    text-decoration: none; /* Elimina la subrayado del enlace */
+    font-weight: 600; /* Peso de la fuente */
 }
 
-.register-link p a:hover{
-    text-decoration: underline;
+.register-link p a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el cursor */
 }
